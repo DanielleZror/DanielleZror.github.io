@@ -15,7 +15,6 @@ module.exports = {
         'xl': '1920px'
       },
       colors: {
-        natural: {},
         pink: {
           100: '#E3CDD9',
           200: '#E6B9CF',
@@ -24,17 +23,13 @@ module.exports = {
         }
       },
       backgroundColor: {
-        natural: {
-          DEFAULT: '#fbf9f5',
-          dark: '#eee9df',
-        },
         pink: {
           DEFAULT: '#F64293'
         },
         black: {
-          light: '#282727',
+          200: '#282727',
           DEFAULT: '#202020',
-          dark: '#151515'
+          400: '#151515'
         }
       }
     }
