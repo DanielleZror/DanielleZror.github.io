@@ -1,13 +1,12 @@
 "use client"
-import { useEffect, useState, useRef, useMemo } from "react"
+import { useEffect, useState, useRef } from "react"
 import Drawer from '@mui/material/Drawer'
 import Box from '@mui/material/Box'
 import SpeedDial from '@mui/material/SpeedDial'
 import SpeedDialAction from '@mui/material/SpeedDialAction'
 
 
-export default function Navbar({ observerRefs }: { observerRefs: { current: HTMLHeadingElement[] | null[] } }) {
-    const pages = useMemo(() => ['home', 'about', 'skills', 'resume', 'contact'], [])
+export default function Navbar({ sections, observerRefs }: { sections: string[], observerRefs: { current: HTMLHeadingElement[] | null[] } }) {
     const [activeSection, setActiveSection] = useState(0)
     const drawerWidth = 112
     // const observers = useRef<{ current: IntersectionObserver[] }>({ current: [] })
@@ -22,7 +21,7 @@ export default function Navbar({ observerRefs }: { observerRefs: { current: HTML
     useEffect(() => {
         let current = observers.current
         if (observerRefs.current?.length && current) {
-            pages.forEach((_, key: number) => {
+            sections.forEach((_, key: number) => {
                 current[key] = new IntersectionObserver((e) =>
                     observerCallback(e, key)
                 )
@@ -31,12 +30,12 @@ export default function Navbar({ observerRefs }: { observerRefs: { current: HTML
                 }
             })
         }
-        if (window.location.hash && pages.findIndex(p => `#${p}` === window.location.hash)) {
+        if (window.location.hash && sections.findIndex(p => `#${p}` === window.location.hash)) {
             document.querySelector(window.location.hash)?.scrollIntoView({ block: "start", behavior: "smooth" })
         }
         return () =>
             current?.forEach((observer: any) => observer?.current?.disconnect())
-    }, [observerRefs, observers, pages])
+    }, [observerRefs, observers, sections])
 
 
     return (
@@ -45,11 +44,15 @@ export default function Navbar({ observerRefs }: { observerRefs: { current: HTML
                 <SpeedDial
                     sx={{ position: 'fixed', top: 32, left: 13, visibility: { xs: 'visible', sm: 'hidden' }, opacity: { xs: 1, sm: 0 }, transition: "all 0.5s ease-in-out" }}
                     direction="down" ariaLabel="menu" icon={<img className="rounded-full self-center w-14" src="dz.png" alt="" />}>
-                    {pages.map((action, key) => (
+                    {sections.map((section, key) => (
                         <SpeedDialAction
+                            key={key}
                             FabProps={{ className: "bg-gray", sx: { width: '70px', borderRadius: '20px', bgcolor: '#E0E0E2', '&:hover': { bgcolor: '#E0E0E2' } } }}
-                            key={action}
-                            icon={<a href={`#${action}`} className={`capitalize hover:text-pink ${activeSection === key ? "text-pink font-bold" : "text-black-200"}`}>{action}</a>} />
+                            icon={
+                                <a href={`#${section}`} className={`capitalize hover:text-pink ${activeSection === key ? "text-pink font-bold" : "text-black-200"}`}>
+                                    {section}
+                                </a>
+                            } />
                     ))}
                 </SpeedDial>
             </Box>
@@ -64,9 +67,9 @@ export default function Navbar({ observerRefs }: { observerRefs: { current: HTML
                     }}>
                     <img className="rounded-full mt-8 self-center w-14" src="dz.png" alt="" />
                     <Box className="flex flex-col gap-7 mt-20">
-                        {pages.map((page, key) => (
-                            <a className={`self-center cursor-pointer hover:text-pink ${activeSection === key ? "text-pink font-bold" : "text-gray"}`} href={`#${page}`} key={key}>
-                                <div className="[writing-mode:vertical-lr] rotate-180 text-lg capitalize">{page}</div>
+                        {sections.map((section, key) => (
+                            <a key={key} href={`#${section}`} className={`self-center cursor-pointer hover:text-pink ${activeSection === key ? "text-pink font-bold" : "text-gray"}`}>
+                                <div className="[writing-mode:vertical-lr] rotate-180 text-lg capitalize">{section}</div>
                             </a>
                         ))}
                     </Box>
