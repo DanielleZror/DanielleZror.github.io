@@ -15,9 +15,16 @@ module.exports = {
         'xl': '1920px'
       },
       colors: {
+        black: {
+          200: '#282727',
+          DEFAULT: '#202020',
+          400: '#151515'
+        },
+        gray: {
+          DEFAULT: '#E0E0E2'
+        },
         pink: {
-          100: '#E3CDD9',
-          200: '#E6B9CF',
+          200: '#E2D7DE',
           DEFAULT: '#F64293',
           400: "#D44283"
         }

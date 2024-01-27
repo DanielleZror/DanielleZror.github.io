@@ -43,12 +43,11 @@ export default function Navbar({ observerRefs }: { observerRefs: { current: HTML
         <>
             <Box sx={{ position: 'relative' }}>
                 <SpeedDial
-                    sx={{ position: 'fixed', top: 32, left: 12, visibility: { xs: 'visible', sm: 'hidden' }, opacity: { xs: 1, sm: 0 }, transition: "all 0.5s ease-in-out" }}
-                    direction="down" ariaLabel="menu"
-                    FabProps={{ className: "bg-pink", sx: { bgcolor: '#F64293', '&:hover': { bgcolor: '#D44283' } } }} >
+                    sx={{ position: 'fixed', top: 32, left: 13, visibility: { xs: 'visible', sm: 'hidden' }, opacity: { xs: 1, sm: 0 }, transition: "all 0.5s ease-in-out" }}
+                    direction="down" ariaLabel="menu" icon={<img className="rounded-full self-center w-14" src="dz.png" alt="" />}>
                     {pages.map((action, key) => (
                         <SpeedDialAction
-                            FabProps={{ className: "bg-pink-200", sx: { width: '70px', borderRadius: '20px', bgcolor: '#E6B9CF', '&:hover': { bgcolor: '#E6B9CF' } } }}
+                            FabProps={{ className: "bg-gray", sx: { width: '70px', borderRadius: '20px', bgcolor: '#E0E0E2', '&:hover': { bgcolor: '#E0E0E2' } } }}
                             key={action}
                             icon={<a href={`#${action}`} className={`capitalize hover:text-pink ${activeSection === key ? "text-pink font-bold" : "text-black-200"}`}>{action}</a>} />
                     ))}
@@ -57,13 +56,16 @@ export default function Navbar({ observerRefs }: { observerRefs: { current: HTML
             <Box component="nav" sx={{ width: { sm: drawerWidth } }}>
                 <Drawer open variant="persistent"
                     sx={{
-                        transition: "all 0.5s ease-in-out", opacity: { xs: 0, sm: 1 }, visibility: { xs: 'hidden', sm: 'visible' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, border: 'none', bgcolor: '#151515' }
+                        '& .MuiDrawer-paper': {
+                            height: { xs: '0px', sm: '100vh' }, borderBottomRightRadius: { xs: '25%', sm: '0' },
+                            borderBottomLeftRadius: { xs: '25%', sm: '0' }, transition: "height 1s ease-in-out",
+                            boxSizing: 'border-box', width: drawerWidth, border: 'none', bgcolor: '#151515'
+                        }
                     }}>
-                    <div className="text-white">icon</div>
-                    <Box className="flex flex-col gap-7 mt-32">
+                    <img className="rounded-full mt-8 self-center w-14" src="dz.png" alt="" />
+                    <Box className="flex flex-col gap-7 mt-20">
                         {pages.map((page, key) => (
-                            <a className={`self-center cursor-pointer hover:text-pink ${activeSection === key ? "text-pink font-bold" : "text-white"}`} href={`#${page}`} key={key}>
+                            <a className={`self-center cursor-pointer hover:text-pink ${activeSection === key ? "text-pink font-bold" : "text-gray"}`} href={`#${page}`} key={key}>
                                 <div className="[writing-mode:vertical-lr] rotate-180 text-lg capitalize">{page}</div>
                             </a>
                         ))}
