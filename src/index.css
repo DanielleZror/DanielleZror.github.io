@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-white text-5xl font-bold max-sm:text-2xl text-left
+  }
+
+  h2 {
+    @apply text-white text-4xl font-bold max-sm:text-2xl text-left relative pl-6 mb-6
+  }
+
+  h2::before {
+    @apply inline-block w-1 h-full bg-pink absolute left-0 top-0 content-[""]
+  }
+
+  h3 {
+    @apply text-gray-400 text-2xl max-sm:text-lg text-left
+  }
+
+  section {
+    @apply p-16
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -14,9 +36,4 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #202020;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }

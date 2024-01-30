@@ -21,7 +21,8 @@ module.exports = {
           400: '#151515'
         },
         gray: {
-          DEFAULT: '#E0E0E2'
+          DEFAULT: '#E0E0E2',
+          400: '#B2B2B4'
         },
         pink: {
           200: '#E2D7DE',
