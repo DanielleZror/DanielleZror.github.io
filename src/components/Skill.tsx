@@ -6,8 +6,8 @@ export default function Skill({ skill }: { skill: { icons: string[], title: stri
                     <img className="w-8 h-8 mb-1" src={icon} alt={skill.title} key={key} />
                 ))}
             </div>
-            <h3 className="text-white font-semibold text-left">{skill.title}</h3>
-            <span className="text-gray text-left">{skill.experience}</span>
+            <h3>{skill.title}</h3>
+            <span>{skill.experience}</span>
         </div>
     )
 }

@@ -8,7 +8,7 @@
   }
 
   h2 {
-    @apply text-white text-4xl font-bold max-sm:text-2xl text-left relative pl-6 mb-6
+    @apply text-white text-4xl font-bold max-sm:text-xl text-left relative pl-6 mb-6
   }
 
   h2::before {
@@ -16,11 +16,23 @@
   }
 
   h3 {
-    @apply text-gray-400 text-2xl max-sm:text-lg text-left
+    @apply text-white font-semibold text-2xl max-sm:text-lg text-left
+  }
+
+  h4 {
+    @apply text-white text-xl font-semibold max-sm:text-base text-left
+  }
+
+  h5 {
+    @apply text-gray-400 text-base max-sm:text-sm text-left
   }
 
   section {
     @apply p-16
+  }
+
+  span {
+    @apply text-base text-gray text-left
   }
 }
 
