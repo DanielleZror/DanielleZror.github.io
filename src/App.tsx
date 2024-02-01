@@ -19,7 +19,7 @@ function App() {
       <main className="bg-black ml-28 max-sm:ml-0 transition-all duration-500">
         {sections.map((section, key) => {
           return (
-            <div data-section id={section.id.toLowerCase()} className="min-h-[400px] text-center" key={key}>
+            <div data-section id={section.id.toLowerCase()} className="text-center" key={key}>
               <div ref={(el) => (observerRefs.current[key] = el)}></div>
               <section.component />
             </div>

@@ -73,6 +73,9 @@ module.exports = {
       },
       animation: {
         typing: "typing 2s steps(24) infinite alternate, blink 4s infinite linear"
+      },
+      gridTemplateColumns: {
+        '2': '160px 1fr'
       }
     }
   },

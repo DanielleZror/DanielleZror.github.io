@@ -3,9 +3,9 @@ import Typewriter from "./Typewriter"
 
 export default function Home() {
     return (
-        <section className="min-h-screen relative">
-            <div className="text-left flex mt-6">
-                <div className="w-2/3 pt-20">
+        <section className="min-h-screen flex flex-col">
+            <div className="text-left flex mt-6 ">
+                <div className="w-2/3 pt-20 max-sm:pt-12">
                     <h3 className="mb-4">Hello,</h3>
                     <Typewriter texts={["Danielle Zror", "a Software Enginee", "a Troubleshooting Pro", "a Dog Mom"]} />
                     <h5 className="mt-12">
@@ -16,7 +16,7 @@ export default function Home() {
                     <img src="Github.png" alt="Profile" />
                 </div>
             </div>
-            <ContactDetails className="absolute bottom-0 mb-20" />
+            <ContactDetails />
         </section>
     )
 }
