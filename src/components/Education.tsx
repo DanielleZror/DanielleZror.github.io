@@ -2,7 +2,7 @@
 import Timeline from "@mui/lab/Timeline"
 import { timelineItemClasses } from "@mui/lab/TimelineItem"
 import TimelineContent from "@mui/lab/TimelineContent"
-import CustomTimelineItem from "./TimelineItem"
+import CustomTimelineItem from "./CustomTimelineItem"
 
 export default function Education() {
     const institutions = [
@@ -32,7 +32,7 @@ export default function Education() {
             {institutions.map((institution, key) => (
                 <CustomTimelineItem key={key}>
                     <TimelineContent sx={{ ml: "16px" }}>
-                        {institution.link ? <a href={institution.link} target="tab"><h4 className="hover:text-pink hover:underline">{institution.title}</h4></a> : <h4>{institution.title}</h4>}
+                        {institution.link ? <a href={institution.link} target="_blank" rel="noreferrer"><h4 className="hover:text-pink hover:underline">{institution.title}</h4></a> : <h4>{institution.title}</h4>}
                         {institution.name && <h6 className="mb-3">{institution.name}</h6>}
                         <h6 className="mb-3">{institution.years}</h6>
                     </TimelineContent>

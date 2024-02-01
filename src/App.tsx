@@ -9,8 +9,8 @@ import Contact from './components/Contact'
 function App() {
   let observerRefs = useRef<HTMLHeadingElement[] | null[]>([])
   const sections = [
-    { id: "home", component: Home }, { id: "about", component: About }, { id: "skills", component: Skills },
-    { id: "resume", component: Resume }, { id: "contact", component: Contact }]
+    { id: "home", component: Home }, { id: "about", component: About }, { id: "resume", component: Resume },
+    { id: "skills", component: Skills }, { id: "contact", component: Contact }]
   const sectionsKeys = sections.map(s => s.id)
 
   return (
@@ -19,7 +19,7 @@ function App() {
       <main className="bg-black ml-28 max-sm:ml-0 transition-all duration-500">
         {sections.map((section, key) => {
           return (
-            <div data-section id={section.id.toLowerCase()} className="h-[800px] text-center pt-8" key={key}>
+            <div data-section id={section.id.toLowerCase()} className="min-h-[400px] text-center" key={key}>
               <div ref={(el) => (observerRefs.current[key] = el)}></div>
               <section.component />
             </div>

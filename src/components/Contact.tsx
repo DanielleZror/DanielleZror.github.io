@@ -1,7 +1,7 @@
 export default function Contact() {
     return (
-        <>
-            <h1 className="text-pink">Contact</h1>
-        </>
+        <section>
+            <h2>Contact</h2>
+        </section>
     )
 }

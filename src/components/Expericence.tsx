@@ -4,7 +4,7 @@ import { timelineItemClasses } from "@mui/lab/TimelineItem"
 import TimelineContent from "@mui/lab/TimelineContent"
 import Avatar from "@mui/material/Avatar"
 import ShowMoreText from "./ShowMoreText"
-import CustomTimelineItem from "./TimelineItem"
+import CustomTimelineItem from "./CustomTimelineItem"
 
 export default function Expericence() {
     const companies = [

@@ -25,7 +25,7 @@ module.exports = {
           400: '#B2B2B4'
         },
         pink: {
-          200: '#E2D7DE',
+          200: '#E9A5C5',
           DEFAULT: '#F64293',
           400: "#D44283"
         }
