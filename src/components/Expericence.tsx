@@ -1,12 +1,10 @@
 
 import Timeline from "@mui/lab/Timeline"
-import TimelineItem, { timelineItemClasses } from "@mui/lab/TimelineItem"
-import TimelineSeparator from "@mui/lab/TimelineSeparator"
-import TimelineConnector from "@mui/lab/TimelineConnector"
+import { timelineItemClasses } from "@mui/lab/TimelineItem"
 import TimelineContent from "@mui/lab/TimelineContent"
-import TimelineDot from "@mui/lab/TimelineDot"
 import Avatar from "@mui/material/Avatar"
 import ShowMoreText from "./ShowMoreText"
+import CustomTimelineItem from "./TimelineItem"
 
 export default function Expericence() {
     const companies = [
@@ -45,17 +43,13 @@ export default function Expericence() {
                         </div>
                     </div>
                     {company.positions.map((expericence, key) => (
-                        <TimelineItem className="ml-3" key={key}>
-                            <TimelineSeparator>
-                                <TimelineDot variant="outlined" sx={{ borderColor: "#F64293" }} />
-                                <TimelineConnector />
-                            </TimelineSeparator>
+                        <CustomTimelineItem key={key}>
                             <TimelineContent sx={{ ml: "16px" }}>
                                 <h4>{expericence.role}</h4>
-                                <h5 className="mb-3">{expericence.years}</h5>
+                                <h6 className="mb-3">{expericence.years}</h6>
                                 <ShowMoreText text={expericence.desc} />
                             </TimelineContent>
-                        </TimelineItem>
+                        </CustomTimelineItem>
                     ))}
                 </div>
             ))}

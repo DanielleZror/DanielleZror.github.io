@@ -24,6 +24,10 @@
   }
 
   h5 {
+    @apply text-gray-400 text-lg max-sm:text-sm text-left
+  }
+
+  h6 {
     @apply text-gray-400 text-base max-sm:text-sm text-left
   }
 
