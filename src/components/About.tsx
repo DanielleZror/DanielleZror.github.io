@@ -7,6 +7,9 @@ export default function About() {
                 I'm an experienced software engineer with a strong product mindset, skilled in Python, frontend frameworks, SQL, and OOP principles. Excellent problem-solving, creative design solutions, and architectural capabilities.
                 Highly motivated, technology-driven, self-learner, independent, and a team player.
             </h5>
+            <h5 className="mt-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at sapien vitae nisl aliquam fringilla. Etiam tempus augue vitae eleifend lacinia. Duis at leo dignissim, iaculis risus vitae, finibus tellus. Cras ullamcorper ut justo at tempor. Nulla convallis est et orci faucibus semper. Nam pulvinar hendrerit est, blandit pretium felis.
+            </h5>
             {/* Why I'm Different? */}
         </section>
     )
