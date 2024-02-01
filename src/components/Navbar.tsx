@@ -42,7 +42,7 @@ export default function Navbar({ sections, observerRefs }: { sections: string[],
         <>
             <Box sx={{ position: 'relative' }}>
                 <SpeedDial
-                    sx={{ position: 'fixed', top: 32, left: 13, visibility: { xs: 'visible', sm: 'hidden' }, opacity: { xs: 1, sm: 0 }, transition: "all 0.5s ease-in-out" }}
+                    sx={{ position: 'fixed', top: 32, right: 13, visibility: { xs: 'visible', sm: 'hidden' }, opacity: { xs: 1, sm: 0 }, transition: "all 0.5s ease-in-out" }}
                     direction="down" ariaLabel="menu" icon={<img className="rounded-full self-center w-14" src="dz.png" alt="" />}>
                     {sections.map((section, key) => (
                         <SpeedDialAction
@@ -62,7 +62,7 @@ export default function Navbar({ sections, observerRefs }: { sections: string[],
                         '& .MuiDrawer-paper': {
                             height: { xs: '0px', sm: '100vh' }, borderBottomRightRadius: { xs: '25%', sm: '0' },
                             borderBottomLeftRadius: { xs: '25%', sm: '0' }, transition: "height 1s ease-in-out",
-                            boxSizing: 'border-box', width: drawerWidth, border: 'none', bgcolor: '#151515'
+                            boxSizing: 'border-box', width: drawerWidth, borderRight: 'solid 1px #202020', bgcolor: '#151515'
                         }
                     }}>
                     <img className="rounded-full mt-8 self-center w-14" src="dz.png" alt="" />
