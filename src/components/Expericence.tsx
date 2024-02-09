@@ -32,8 +32,8 @@ export default function Expericence() {
             }
         }}>
             {companies.map((company, key) => (
-                <div key={key}>
-                    <div className="flex mt-8 items-center">
+                <div key={key} className="mb-4">
+                    <div className="flex mt-4 items-center">
                         <Avatar
                             alt={company.name}
                             src={company.icon}
