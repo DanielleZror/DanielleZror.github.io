@@ -5,6 +5,7 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Resume from './components/Resume'
 import Contact from './components/Contact'
+import Copyright from './components/Copyright'
 
 function App() {
   let observerRefs = useRef<HTMLHeadingElement[] | null[]>([])
@@ -25,6 +26,7 @@ function App() {
             </div>
           )
         })}
+        <Copyright />
       </main>
     </>
   )
