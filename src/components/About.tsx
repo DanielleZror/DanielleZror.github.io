@@ -2,18 +2,25 @@ export default function About() {
     return (
         <section className="bg-black-400">
             <h2 className="mb-10">About Me</h2>
-            <h4>Hello, I'm Danielle Zror</h4>
+            <div className="flex">
+                <h4 className=" pr-2">Hello! </h4>
+                <h4 className="text-pink">I'm Danielle Zror</h4>
+            </div>
             <div className="flex justify-center transition-height duration-500 ease-in-out md:h-0 max-md:h-64">
                 <img src="Profile.png" alt="Profile" />
             </div>
             <h5>
-                I'm an experienced software engineer with a strong product mindset, skilled in Python, frontend frameworks, SQL, and OOP principles. Excellent problem-solving, creative design solutions, and architectural capabilities.
-                Highly motivated, technology-driven, self-learner, independent, and a team player.
+                I am a Software engineer with more than 9 years, with a track record of delivering high-quality projects on time. My expertise lies in software development, with proficiency in languages and frameworks such as Python, TavaScript, React.js, Vue.js as well as Databases like MySQL, MongoDB, Oracle, ArnagoDB, and more.
             </h5>
             <h5 className="mt-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at sapien vitae nisl aliquam fringilla. Etiam tempus augue vitae eleifend lacinia. Duis at leo dignissim, iaculis risus vitae, finibus tellus. Cras ullamcorper ut justo at tempor. Nulla convallis est et orci faucibus semper. Nam pulvinar hendrerit est, blandit pretium felis.
-            </h5>
+                My strong problem-solving skills and attention to details have enabled me to identify and resolve complex technical challenges efficiently. I have led multiple software projects from conception to deployment, collaborating closely with cross-functional teams to exceed customer expectations.            </h5>
             {/* Why I'm Different? */}
+            <h5 className="mt-4">
+                My strengths lie in excellent problem-solving, creative design solutions, and architectural capabilities. I'm highly motivated, technology-driven, and possess a keen aptitude for self-learning. Whether working independently or as part of a team, I thrive on challenges and consistently deliver exceptional results.
+            </h5>
+            <h5 className="mt-4">
+                Now, I'm eagerly seeking my next challenge in the software engineering world, where I can leverage my expertise and drive innovation to new heights.
+            </h5>
         </section>
     )
 }
