@@ -23,14 +23,14 @@ export default function Education() {
         }
     ]
     return (
-        <Timeline className="mt-8" sx={{
+        <Timeline sx={{
             [`& .${timelineItemClasses.root}:before`]: {
                 flex: 0,
                 padding: 0,
             }
         }}>
             {institutions.map((institution, key) => (
-                <CustomTimelineItem key={key}>
+                <CustomTimelineItem key={key} className="first:mt-8">
                     <TimelineContent sx={{ ml: "16px" }}>
                         {institution.link ? <a href={institution.link} target="_blank" rel="noreferrer"><h4 className="hover:text-pink hover:underline">{institution.title}</h4></a> : <h4>{institution.title}</h4>}
                         {institution.name && <h6 className="mb-3">{institution.name}</h6>}
