@@ -4,11 +4,11 @@
 
 @layer base {
   h1 {
-    @apply text-white text-5xl font-bold max-sm:text-2xl text-left
+    @apply text-white text-5xl font-bold max-sm:text-2xl text-left selection:bg-pink
   }
 
   h2 {
-    @apply text-white text-4xl font-bold max-sm:text-xl text-left relative pl-6 mb-6
+    @apply text-white text-4xl font-bold max-sm:text-xl text-left relative pl-6 mb-6 selection:bg-pink
   }
 
   h2::before {
@@ -16,19 +16,19 @@
   }
 
   h3 {
-    @apply text-white font-semibold text-2xl max-sm:text-lg text-left
+    @apply text-white font-semibold text-2xl max-sm:text-lg text-left selection:bg-pink
   }
 
   h4 {
-    @apply text-white text-xl font-semibold max-sm:text-base text-left
+    @apply text-white text-xl font-semibold max-sm:text-base text-left selection:bg-pink
   }
 
   h5 {
-    @apply text-gray-400 text-lg max-sm:text-sm text-left
+    @apply text-gray-400 text-lg max-sm:text-sm text-left selection:bg-pink
   }
 
   h6 {
-    @apply text-gray-400 text-base max-sm:text-sm text-left
+    @apply text-gray-400 text-base max-sm:text-sm text-left selection:bg-pink
   }
 
   section {
@@ -36,7 +36,7 @@
   }
 
   span {
-    @apply text-base text-gray text-left
+    @apply text-base text-gray text-left selection:bg-pink
   }
 }
 
