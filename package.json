@@ -1,7 +1,7 @@
 {
   "name": "app",
   "version": "0.1.0",
-  "homepage": "https://daniellezror.github.io/DanielleZror.github.io",
+  "homepage": "https://daniellezror.github.io/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.3",
