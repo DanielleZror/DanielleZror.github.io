@@ -43,14 +43,12 @@ export default function Navbar({ sections, observerRefs, onChangeMode }: { secti
         <>
             <Box sx={{ position: 'relative' }}>
                 <SpeedDial
-                    FabProps={{ sx: {} }}
                     sx={{ position: 'fixed', top: 32, right: 13, visibility: { xs: 'visible', sm: 'hidden' }, opacity: { xs: 1, sm: 0 }, transition: "all 0.5s ease-in-out" }}
                     direction="down" ariaLabel="menu" icon={<img className="self-center w-10 " src="dz.png" alt="" />}>
                     {sections.map((section, key) => (
                         <SpeedDialAction
                             key={key}
-                            color="primary-light"
-                            FabProps={{ sx: { width: '70px', borderRadius: '20px', bgcolor: 'primary', '&:hover': { bgcolor: 'primary' } } }}
+                            FabProps={{ sx: { width: '70px', borderRadius: '20px' } }}
                             icon={
                                 <a href={`#${section}`} className={`capitalize hover:text-pink dark:hover:text-pink ${activeSection === key ? "text-pink font-bold" : "text-black-200 dark:text-white"}`}>
                                     {section}
@@ -59,7 +57,7 @@ export default function Navbar({ sections, observerRefs, onChangeMode }: { secti
                     ))}
                     <SpeedDialAction
                         color="primary"
-                        FabProps={{ sx: { width: '70px', borderRadius: '20px', bgcolor: 'primary', '&:hover': { bgcolor: 'primary' } } }}
+                        FabProps={{ sx: { width: '70px', borderRadius: '20px' } }}
                         icon={<DarkSwitch onChangeMode={onChangeMode} />} />
                 </SpeedDial>
             </Box>
@@ -69,7 +67,7 @@ export default function Navbar({ sections, observerRefs, onChangeMode }: { secti
                         '& .MuiDrawer-paper': {
                             height: { xs: '0px', sm: '100vh' }, borderBottomRightRadius: { xs: '25%', sm: '0' },
                             borderBottomLeftRadius: { xs: '25%', sm: '0' }, transition: "height 1s ease-in-out",
-                            boxSizing: 'border-box', width: drawerWidth, borderRight: 'solid 1px #202020'
+                            boxSizing: 'border-box', width: drawerWidth, borderRight: 'solid 1px', borderColor: 'primary.main'
                         }
                     }}>
                     <img className="mt-8 self-center w-14" src="dz.png" alt="" />
