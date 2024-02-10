@@ -5,7 +5,7 @@ import Paper from '@mui/material/Paper'
 export default function Resume() {
     return (
         <section>
-            <h2 className="mb-10">Resume</h2>
+            <h2>Resume</h2>
             <h3 className="mb-4">Experience</h3>
             <Paper square={false} elevation={0} sx={{ p: { xs: '0.5rem', sm: '2rem' }, pt: '0' }}>
                 <Experience />

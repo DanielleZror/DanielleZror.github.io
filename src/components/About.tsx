@@ -1,7 +1,7 @@
 export default function About() {
     return (
         <section className="dark:bg-black-400 bg-white-400">
-            <h2 className="mb-10">About Me</h2>
+            <h2>About Me</h2>
             <div className="flex">
                 <h4 className=" pr-2">Hello! </h4>
                 <h4 className="text-pink">I'm Danielle Zror</h4>

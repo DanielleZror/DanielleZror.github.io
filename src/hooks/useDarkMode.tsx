@@ -22,7 +22,6 @@ export default function useDarkMode(): [Mode, Dispatch<Mode>] {
     }
 
     useEffect(() => {
-        console.log('useeffect')
         if (isDarkMode()) {
             setLocalStorage(Mode.Dark)
         } else {
