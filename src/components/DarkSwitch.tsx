@@ -1,6 +1,6 @@
 import Switch from "@mui/material/Switch"
-import { useState } from "react"
-import useDarkMode, { Mode } from "../useDarkMode"
+import { useEffect, useState } from "react"
+import useDarkMode, { Mode } from "../hooks/useDarkMode"
 
 export default function DarkSwitch({ onChangeMode }: { onChangeMode: any }) {
     const [theme, setTheme] = useDarkMode()
@@ -12,6 +12,16 @@ export default function DarkSwitch({ onChangeMode }: { onChangeMode: any }) {
         setChecked(event.target.checked)
         onChangeMode(currentMode)
     }
+
+    useEffect(() => {
+        const updateChecked = () => {
+            setChecked(localStorage.theme == Mode.Dark ? true : false)
+        }
+
+        window.addEventListener("resize", updateChecked)
+
+        return () => window.removeEventListener("resize", updateChecked)
+    }, [])
 
     return (
         <Switch checked={checked} onChange={handleChange} className="m-auto"

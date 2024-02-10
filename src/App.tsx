@@ -7,7 +7,7 @@ import Resume from './components/Resume'
 import Contact from './components/Contact'
 import Copyright from './components/Copyright'
 import { PaletteMode, ThemeProvider, createTheme } from '@mui/material'
-import useDarkMode, { Mode } from './useDarkMode'
+import useDarkMode, { Mode } from './hooks/useDarkMode'
 
 
 const getDesignTokens = (mode: PaletteMode) => ({

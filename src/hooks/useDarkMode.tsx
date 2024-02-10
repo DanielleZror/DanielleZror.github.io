@@ -22,12 +22,14 @@ export default function useDarkMode(): [Mode, Dispatch<Mode>] {
     }
 
     useEffect(() => {
+        console.log('useeffect')
         if (isDarkMode()) {
             setLocalStorage(Mode.Dark)
         } else {
             setLocalStorage(Mode.Light)
         }
     }, [theme])
+
 
     return [theme, setLocalStorage]
 }
