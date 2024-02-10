@@ -4,9 +4,10 @@ import Drawer from '@mui/material/Drawer'
 import Box from '@mui/material/Box'
 import SpeedDial from '@mui/material/SpeedDial'
 import SpeedDialAction from '@mui/material/SpeedDialAction'
+import DarkSwitch from "./DarkSwitch"
 
 
-export default function Navbar({ sections, observerRefs }: { sections: string[], observerRefs: { current: HTMLHeadingElement[] | null[] } }) {
+export default function Navbar({ sections, observerRefs, onChangeMode }: { sections: string[], observerRefs: { current: HTMLHeadingElement[] | null[] }, onChangeMode: any }) {
     const [activeSection, setActiveSection] = useState(0)
     const drawerWidth = 112
     // const observers = useRef<{ current: IntersectionObserver[] }>({ current: [] })
@@ -42,18 +43,24 @@ export default function Navbar({ sections, observerRefs }: { sections: string[],
         <>
             <Box sx={{ position: 'relative' }}>
                 <SpeedDial
+                    FabProps={{ sx: {} }}
                     sx={{ position: 'fixed', top: 32, right: 13, visibility: { xs: 'visible', sm: 'hidden' }, opacity: { xs: 1, sm: 0 }, transition: "all 0.5s ease-in-out" }}
-                    direction="down" ariaLabel="menu" icon={<img className="rounded-full self-center w-14" src="dz.png" alt="" />}>
+                    direction="down" ariaLabel="menu" icon={<img className="self-center w-10 " src="dz.png" alt="" />}>
                     {sections.map((section, key) => (
                         <SpeedDialAction
                             key={key}
-                            FabProps={{ className: "bg-gray", sx: { width: '70px', borderRadius: '20px', bgcolor: '#E0E0E2', '&:hover': { bgcolor: '#E0E0E2' } } }}
+                            color="primary-light"
+                            FabProps={{ sx: { width: '70px', borderRadius: '20px', bgcolor: 'primary', '&:hover': { bgcolor: 'primary' } } }}
                             icon={
-                                <a href={`#${section}`} className={`capitalize hover:text-pink ${activeSection === key ? "text-pink font-bold" : "text-black-200"}`}>
+                                <a href={`#${section}`} className={`capitalize hover:text-pink dark:hover:text-pink ${activeSection === key ? "text-pink font-bold" : "text-black-200 dark:text-white"}`}>
                                     {section}
                                 </a>
                             } />
                     ))}
+                    <SpeedDialAction
+                        color="primary"
+                        FabProps={{ sx: { width: '70px', borderRadius: '20px', bgcolor: 'primary', '&:hover': { bgcolor: 'primary' } } }}
+                        icon={<DarkSwitch onChangeMode={onChangeMode} />} />
                 </SpeedDial>
             </Box>
             <Box component="nav" sx={{ width: { sm: drawerWidth } }}>
@@ -62,17 +69,18 @@ export default function Navbar({ sections, observerRefs }: { sections: string[],
                         '& .MuiDrawer-paper': {
                             height: { xs: '0px', sm: '100vh' }, borderBottomRightRadius: { xs: '25%', sm: '0' },
                             borderBottomLeftRadius: { xs: '25%', sm: '0' }, transition: "height 1s ease-in-out",
-                            boxSizing: 'border-box', width: drawerWidth, borderRight: 'solid 1px #202020', bgcolor: '#151515'
+                            boxSizing: 'border-box', width: drawerWidth, borderRight: 'solid 1px #202020'
                         }
                     }}>
-                    <img className="rounded-full mt-8 self-center w-14" src="dz.png" alt="" />
+                    <img className="mt-8 self-center w-14" src="dz.png" alt="" />
                     <Box className="flex flex-col gap-7 mt-20">
                         {sections.map((section, key) => (
-                            <a key={key} href={`#${section}`} className={`self-center cursor-pointer hover:text-pink ${activeSection === key ? "text-pink font-bold" : "text-gray"}`}>
+                            <a key={key} href={`#${section}`} className={`self-center cursor-pointer hover:text-pink ${activeSection === key ? "text-pink font-bold" : "dark:text-gray text-black-200"}`}>
                                 <div className="[writing-mode:vertical-lr] rotate-180 text-lg capitalize">{section}</div>
                             </a>
                         ))}
                     </Box>
+                    <DarkSwitch onChangeMode={onChangeMode} />
                 </Drawer>
             </Box>
         </>

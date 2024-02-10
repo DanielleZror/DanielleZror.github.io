@@ -4,11 +4,11 @@
 
 @layer base {
   h1 {
-    @apply text-white text-5xl font-bold max-sm:text-2xl text-left selection:bg-pink
+    @apply text-black dark:text-white text-5xl font-bold max-sm:text-2xl text-left dark:selection:bg-pink selection:bg-pink-200
   }
 
   h2 {
-    @apply text-white text-4xl font-bold max-sm:text-xl text-left relative pl-6 mb-6 selection:bg-pink
+    @apply text-black dark:text-white text-4xl font-bold max-sm:text-xl text-left relative pl-6 mb-6 dark:selection:bg-pink selection:bg-pink-200
   }
 
   h2::before {
@@ -16,27 +16,27 @@
   }
 
   h3 {
-    @apply text-white font-semibold text-2xl max-sm:text-lg text-left selection:bg-pink
+    @apply text-black dark:text-white font-semibold text-2xl max-sm:text-lg text-left dark:selection:bg-pink selection:bg-pink-200
   }
 
   h4 {
-    @apply text-white text-xl font-semibold max-sm:text-base text-left selection:bg-pink
+    @apply text-black dark:text-white text-xl font-semibold max-sm:text-base text-left dark:selection:bg-pink selection:bg-pink-200
   }
 
   h5 {
-    @apply text-gray-400 text-lg max-sm:text-sm text-left selection:bg-pink
+    @apply text-black-200 dark:text-gray-400 text-lg max-sm:text-sm text-left dark:selection:bg-pink selection:bg-pink-200
   }
 
   h6 {
-    @apply text-gray-400 text-base max-sm:text-sm text-left selection:bg-pink
+    @apply text-black-200 dark:text-gray-400 text-base max-sm:text-sm text-left dark:selection:bg-pink selection:bg-pink-200
   }
 
   section {
-    @apply p-16 min-h-[400px] max-sm:p-8
+    @apply p-16 min-h-[400px] max-sm:p-8 dark:bg-black bg-white-300
   }
 
   span {
-    @apply text-base text-gray text-left selection:bg-pink
+    @apply text-base text-black-200 dark:text-gray text-left dark:selection:bg-pink selection:bg-pink-200
   }
 }
 
@@ -51,5 +51,4 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #202020;
 }
