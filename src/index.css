@@ -4,11 +4,11 @@
 
 @layer base {
   h1 {
-    @apply text-black dark:text-white text-5xl font-bold max-sm:text-2xl text-left dark:selection:bg-pink selection:bg-pink-200
+    @apply text-black dark:text-white text-5xl font-bold max-[840px]:text-4xl max-[695px]:text-3xl max-[625px]:text-2xl text-left dark:selection:bg-pink selection:bg-pink-200
   }
 
   h2 {
-    @apply text-black dark:text-white text-4xl font-bold max-sm:text-xl text-left relative pl-6 mb-10 dark:selection:bg-pink selection:bg-pink-200
+    @apply text-black dark:text-white font-bold text-4xl max-md:text-3xl max-sm:text-2xl text-left relative pl-6 mb-10 dark:selection:bg-pink selection:bg-pink-200
   }
 
   h2::before {
@@ -16,15 +16,15 @@
   }
 
   h3 {
-    @apply text-black dark:text-white font-semibold text-2xl max-sm:text-lg text-left dark:selection:bg-pink selection:bg-pink-200
+    @apply text-black dark:text-white font-semibold text-2xl max-md:text-xl max-sm:text-lg text-left dark:selection:bg-pink selection:bg-pink-200
   }
 
   h4 {
-    @apply text-black dark:text-white text-xl font-semibold max-sm:text-base text-left dark:selection:bg-pink selection:bg-pink-200
+    @apply text-black dark:text-white font-semibold text-xl max-md:text-lg max-sm:text-base text-left dark:selection:bg-pink selection:bg-pink-200
   }
 
   h5 {
-    @apply text-black-200 dark:text-gray-400 text-lg max-sm:text-sm text-left dark:selection:bg-pink selection:bg-pink-200
+    @apply text-black-200 dark:text-gray-400 text-lg max-md:text-base max-sm:text-sm text-left dark:selection:bg-pink selection:bg-pink-200
   }
 
   h6 {

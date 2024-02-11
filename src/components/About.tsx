@@ -4,7 +4,7 @@ export default function About() {
             <h2>About Me</h2>
             <div className="flex">
                 <h4 className=" pr-2">Hello! </h4>
-                <h4 className="text-pink">I'm Danielle Zror</h4>
+                <h4 className="text-pink dark:text-pink selection:bg-pink-200 dark:selection:bg-pink-200">I'm Danielle Zror</h4>
             </div>
             <div className="flex justify-center transition-height duration-500 ease-in-out md:h-0 max-md:h-64">
                 <img src="Profile.png" alt="Profile" />

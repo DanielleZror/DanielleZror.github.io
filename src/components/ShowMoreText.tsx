@@ -26,7 +26,7 @@ export default function ShowMoreText({ text }: { text: string }) {
         <span>
             {textToShow}
             {!fullSize &&
-                <span className="text-pink ml-1 cursor-pointer" onClick={() => setReadMore(!readMore)}>{readMore ? 'read less' : 'read more'}</span>}
+                <span className="text-pink dark:text-pink ml-1 cursor-pointer dark:selection:bg-pink-200 selection:bg-pink-200" onClick={() => setReadMore(!readMore)}>{readMore ? 'read less' : 'read more'}</span>}
         </span>
     )
 }
