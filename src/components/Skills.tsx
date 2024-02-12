@@ -1,7 +1,8 @@
+import { useEffect, useMemo, useState } from "react"
 import Skill from "./Skill"
 
-export default function Skills() {
-    const skills = [
+export default function Skills({ isDarkMode }: { isDarkMode: boolean }) {
+    const skillsSet = useMemo(() => [
         {
             icons: ["Python.png"], title: "Python",
             experience: "Proficient in Python with specialized expertise in building web applications using both Flask and FastAPI frameworks. Skilled in designing RESTful APIs, implementing authentication, and optimizing performance for scalable applications."
@@ -15,7 +16,7 @@ export default function Skills() {
             experience: "Proficient in database management systems including MySQL, Oracle, and MongoDB. Skilled in designing schemas, optimizing queries, and ensuring data integrity across different database platforms."
         },
         {
-            icons: ["AWS.png"], title: "AWS",
+            icons: [isDarkMode ? "DarkAWS.png" : "AWS.png"], title: "AWS",
             experience: "Deploying and managing cloud infrastructure on AWS, including EC2 instances, S3 buckets, IAM roles, Route 53, and Elastic Load Balancer (ELB) setup. Experienced in leveraging AWS Lambda and API Gateway for serverless computing. "
         },
         {
@@ -32,8 +33,15 @@ export default function Skills() {
             experience: "Developed a set of microservices, each adhering to core Java principles such as Object-Oriented Programming (OOP), design patterns, and multi-threading."
         },
         { icons: ["HTML.png", "CSS.png"], title: "HTML, CSS", experience: "put here your experience" }
+    ], [isDarkMode])
 
-    ]
+    const [skills, setSkills] = useState(skillsSet)
+
+    useEffect(() => {
+        setSkills(skillsSet)
+
+    }, [isDarkMode, skillsSet])
+
     return (
         <section>
             <h2>Skills</h2>

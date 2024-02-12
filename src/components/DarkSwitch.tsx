@@ -15,7 +15,7 @@ export default function DarkSwitch({ onChangeMode }: { onChangeMode: any }) {
 
     useEffect(() => {
         const updateChecked = () => {
-            setChecked(localStorage.theme == Mode.Dark ? true : false)
+            setChecked(localStorage.theme === Mode.Dark ? true : false)
         }
 
         window.addEventListener("resize", updateChecked)

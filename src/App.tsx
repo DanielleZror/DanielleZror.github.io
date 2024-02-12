@@ -9,7 +9,6 @@ import Copyright from './components/Copyright'
 import { PaletteMode, ThemeProvider, createTheme } from '@mui/material'
 import useDarkMode, { Mode } from './hooks/useDarkMode'
 
-
 const getDesignTokens = (mode: PaletteMode) => ({
   palette: {
     mode,
@@ -42,6 +41,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
       }),
   },
 })
+
 function App() {
   let observerRefs = useRef<HTMLHeadingElement[] | null[]>([])
   const sections = [
@@ -65,7 +65,7 @@ function App() {
             return (
               <div data-section id={section.id.toLowerCase()} className="text-center" key={key}>
                 <div ref={(el) => (observerRefs.current[key] = el)}></div>
-                <section.component />
+                <section.component isDarkMode={mode === Mode.Dark} />
               </div>
             )
           })}
