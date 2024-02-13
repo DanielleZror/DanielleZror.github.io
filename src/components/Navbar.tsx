@@ -7,7 +7,7 @@ import SpeedDialAction from '@mui/material/SpeedDialAction'
 import DarkSwitch from "./DarkSwitch"
 
 
-export default function Navbar({ sections, observerRefs, onChangeMode }: { sections: string[], observerRefs: { current: HTMLHeadingElement[] | null[] }, onChangeMode: any }) {
+export default function Navbar({ sections, observerRefs, onChangeMode }: { sections: string[], observerRefs: { current: HTMLHeadingElement[] | null[] }, onChangeMode: Function }) {
     const [activeSection, setActiveSection] = useState(0)
     const drawerWidth = 112
     // const observers = useRef<{ current: IntersectionObserver[] }>({ current: [] })
@@ -18,20 +18,26 @@ export default function Navbar({ sections, observerRefs, onChangeMode }: { secti
             setActiveSection(key)
         }
     }
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2,
+    }
 
     useEffect(() => {
         let current = observers.current
         if (observerRefs.current?.length && current) {
             sections.forEach((_, key: number) => {
-                current[key] = new IntersectionObserver((e) =>
+                current[key] = new IntersectionObserver((e) => {
                     observerCallback(e, key)
+                }, observerOptions
                 )
                 if (observerRefs.current[key]) {
                     current[key].observe(observerRefs.current[key])
                 }
             })
         }
-        if (window.location.hash && sections.findIndex(p => `#${p}` === window.location.hash)) {
+        if (window.location.hash && sections.findIndex(p => `#${p}` === window.location.hash) !== -1) {
             document.querySelector(window.location.hash)?.scrollIntoView({ block: "start", behavior: "smooth" })
         }
         return () =>
