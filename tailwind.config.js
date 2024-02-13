@@ -94,7 +94,7 @@ module.exports = {
         'profile-pic': "linear-gradient(rgb(251 249 245 / 80%), rgb(251 249 245 / 80%)), url(/public/Profile.png)"
       },
       backgroundPosition: {
-        'right-bottom': 'right -5rem bottom -5rem'
+        'right-bottom': 'right -3rem bottom -3rem'
       }
     }
   },
