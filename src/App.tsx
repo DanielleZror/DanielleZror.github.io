@@ -63,8 +63,7 @@ function App() {
         <main className="dark:bg-black bg-white-300 ml-28 max-sm:ml-0">
           {sections.map((section, key) => {
             return (
-              <div data-section id={section.id.toLowerCase()} className="text-center" key={key}>
-                <div ref={(el) => (observerRefs.current[key] = el)}></div>
+              <div data-section id={section.id.toLowerCase()} className="text-center" key={key} ref={(el) => (observerRefs.current[key] = el)}>
                 <section.component isDarkMode={mode === Mode.Dark} />
               </div>
             )

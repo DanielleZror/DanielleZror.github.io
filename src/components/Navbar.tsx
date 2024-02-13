@@ -18,11 +18,6 @@ export default function Navbar({ sections, observerRefs, onChangeMode }: { secti
             setActiveSection(key)
         }
     }
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.2,
-    }
 
     useEffect(() => {
         let current = observers.current
@@ -30,7 +25,11 @@ export default function Navbar({ sections, observerRefs, onChangeMode }: { secti
             sections.forEach((_, key: number) => {
                 current[key] = new IntersectionObserver((e) => {
                     observerCallback(e, key)
-                }, observerOptions
+                }, {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.2,
+                }
                 )
                 if (observerRefs.current[key]) {
                     current[key].observe(observerRefs.current[key])
