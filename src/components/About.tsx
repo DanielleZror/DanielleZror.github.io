@@ -46,7 +46,7 @@ export default function About() {
             <h4 className="text-pink dark:text-pink selection:bg-pink-200 dark:selection:bg-pink-200">
                 What is my uniqueness?
             </h4>
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] pt-4 gap-7 text-center">
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] pt-4 gap-4 text-center">
                 {uniqueness.map((u, key) => {
                     return (
                         <IconDescription key={key} className="flex-col"

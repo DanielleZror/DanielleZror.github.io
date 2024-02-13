@@ -41,7 +41,7 @@ export default function Navbar({ sections, observerRefs, onChangeMode }: { secti
         }
         return () =>
             current?.forEach((observer: any) => observer?.current?.disconnect())
-    }, [observerRefs, observers, sections])
+    }, [observerRefs, observers])
 
 
     return (
