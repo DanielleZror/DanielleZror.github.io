@@ -31,7 +31,7 @@ export default function About() {
     return (
         <section className="dark:bg-black-400 bg-white-400">
             <h2 className="max-md:mb-8">About Me</h2>
-            <div className="flex justify-center transition-height duration-500 ease-in-out md:h-0 max-md:h-64 mb-8">
+            <div className="flex justify-center transition-height duration-500 ease-in-out md:h-0 max-md:h-64 max-md:mb-8">
                 <img src="Profile.png" alt="Profile" />
             </div>
             <h5 className="mb-4">

@@ -3,7 +3,7 @@ import Typewriter from "./Typewriter"
 
 export default function Home() {
     return (
-        <section className="min-h-screen max-md:min-h-[80vh] flex flex-col bg-no-repeat bg-right-bottom md:bg-profile-pic dark:md:bg-profile-pic-dark max-md:bg-none">
+        <section className="min-h-[90vh] max-md:min-h-[80vh] flex flex-col bg-no-repeat bg-right-bottom md:bg-profile-pic dark:md:bg-profile-pic-dark max-md:bg-none">
             <div className="text-left mt-6 pt-20 max-sm:pt-12">
                 <h3 className="mb-4">Hello,</h3>
                 <Typewriter texts={["Danielle Zror", "a Software Enginee", "a Troubleshooting Pro", "a Dog Mom"]} />
