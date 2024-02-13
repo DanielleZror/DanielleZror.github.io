@@ -29,7 +29,7 @@ export default function DarkSwitch({ onChangeMode }: { onChangeMode: Function })
                 width: 62,
                 height: 32,
                 padding: 0,
-                borderColor: 'white',
+                borderColor: checked ? 'black' : 'white',
                 borderWidth: '1px',
                 borderRadius: 20 / 2,
                 '& .MuiSwitch-switchBase': {

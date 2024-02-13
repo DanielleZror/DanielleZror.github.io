@@ -47,7 +47,6 @@ function App() {
   const sections = [
     { id: "home", component: Home }, { id: "about", component: About }, { id: "resume", component: Resume },
     { id: "skills", component: Skills }, { id: "contact", component: Contact }]
-  const sectionsKeys = sections.map(s => s.id)
 
   const [mode, setMode] = useDarkMode()
 
@@ -59,7 +58,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Navbar observerRefs={observerRefs} sections={sectionsKeys} onChangeMode={handleModeChange} />
+        <Navbar observerRefs={observerRefs} onChangeMode={handleModeChange} />
         <main className="dark:bg-black bg-white-300 ml-28 max-sm:ml-0">
           {sections.map((section, key) => {
             return (

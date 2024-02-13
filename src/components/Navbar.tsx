@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef, useMemo } from "react"
 import Drawer from '@mui/material/Drawer'
 import Box from '@mui/material/Box'
 import SpeedDial from '@mui/material/SpeedDial'
@@ -7,7 +7,7 @@ import SpeedDialAction from '@mui/material/SpeedDialAction'
 import DarkSwitch from "./DarkSwitch"
 
 
-export default function Navbar({ sections, observerRefs, onChangeMode }: { sections: string[], observerRefs: { current: HTMLHeadingElement[] | null[] }, onChangeMode: Function }) {
+export default function Navbar({ observerRefs, onChangeMode }: { observerRefs: { current: HTMLHeadingElement[] | null[] }, onChangeMode: Function }) {
     const [activeSection, setActiveSection] = useState(0)
     const drawerWidth = 112
     // const observers = useRef<{ current: IntersectionObserver[] }>({ current: [] })
@@ -18,6 +18,7 @@ export default function Navbar({ sections, observerRefs, onChangeMode }: { secti
             setActiveSection(key)
         }
     }
+    const sections = useMemo(() => ["home", "about", "resume", "skills", "contact"], [])
 
     useEffect(() => {
         let current = observers.current
@@ -41,19 +42,20 @@ export default function Navbar({ sections, observerRefs, onChangeMode }: { secti
         }
         return () =>
             current?.forEach((observer: any) => observer?.current?.disconnect())
-    }, [observerRefs, observers])
+    }, [observerRefs, observers, sections])
 
 
     return (
         <>
             <Box sx={{ position: 'relative' }}>
                 <SpeedDial
+                    FabProps={{ sx: { borderColor: 'white', border: '1px solid' } }}
                     sx={{ position: 'fixed', top: 32, right: 13, visibility: { xs: 'visible', sm: 'hidden' }, opacity: { xs: 1, sm: 0 }, transition: "all 0.5s ease-in-out" }}
                     direction="down" ariaLabel="menu" icon={<img className="self-center w-10 " src="dz.png" alt="" />}>
                     {sections.map((section, key) => (
                         <SpeedDialAction
                             key={key}
-                            FabProps={{ sx: { width: '70px', borderRadius: '20px' } }}
+                            FabProps={{ sx: { width: '70px', borderRadius: '20px', borderColor: 'white', border: '1px solid' } }}
                             icon={
                                 <a href={`#${section}`} className={`capitalize hover:text-pink dark:hover:text-pink ${activeSection === key ? "text-pink font-bold" : "text-black-200 dark:text-white"}`}>
                                     {section}
@@ -62,7 +64,7 @@ export default function Navbar({ sections, observerRefs, onChangeMode }: { secti
                     ))}
                     <SpeedDialAction
                         color="primary"
-                        FabProps={{ sx: { width: '70px', borderRadius: '20px' } }}
+                        FabProps={{ sx: { width: '70px', borderRadius: '20px', borderColor: 'white', border: '1px solid' } }}
                         icon={<DarkSwitch onChangeMode={onChangeMode} />} />
                 </SpeedDial>
             </Box>
