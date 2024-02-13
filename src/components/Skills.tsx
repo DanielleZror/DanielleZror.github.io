@@ -12,7 +12,7 @@ export default function Skills({ isDarkMode }: { isDarkMode: boolean }) {
             experience: "Crafting dynamic and interactive web applications, utilizing the strengths of each framework to deliver efficient and user-friendly experiences."
         },
         {
-            icons: ["MySQL.png", "Oracle.png", "MongoDB.png"], title: "MySQL, Oracle & MongoDB",
+            icons: ["MySQL.png", "Oracle.png", "MongoDB.png"], largeIcons: true, title: "MySQL, Oracle & MongoDB",
             experience: "Experienced in schemas designing, queries optimization, and data integrity across different DataBase platforms."
         },
         {
