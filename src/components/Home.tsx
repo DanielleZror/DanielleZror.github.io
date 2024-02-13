@@ -8,7 +8,13 @@ export default function Home() {
                 <h3 className="mb-4">Hello,</h3>
                 <Typewriter texts={["Danielle Zror", "a Software Enginee", "a Troubleshooting Pro", "a Dog Mom"]} />
                 <h5 className="mt-12 md:w-4/5 w-full">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at sapien vitae nisl aliquam fringilla. Etiam tempus augue vitae eleifend lacinia. Duis at leo dignissim, iaculis risus vitae, finibus tellus. Cras ullamcorper ut justo at tempor. Nulla convallis est et orci faucibus semper. Nam pulvinar hendrerit est, blandit pretium felis.
+                    Hey there! I am Danielle, I juggle code and creativity, I brew ideas like a barista crafts coffee, and I turn complex problems into elegant solutions! When I'm not busy turning coffee into code and debugging with my trusty rubber duck, you'll likely find me hitting the gym or enjoying quality time with my furry dog Lola.
+                </h5>
+                <h5 className="mt-4 md:w-4/5 w-full">
+                    I bring a unique blend of energy, creativity, and determination to every team and project.
+                </h5>
+                <h5 className="mt-4 md:w-4/5 w-full">
+                    So, if you're looking for a programming expert to turn your tech dreams into reality, look no further!
                 </h5>
             </div>
             <ContactDetails />

@@ -32,7 +32,7 @@ export default function Skills({ isDarkMode }: { isDarkMode: boolean }) {
             experience: "Leveraging Docker containers in all product lifecycle environments, from development, through staging and production."
         },
         {
-            icons: ["Github.png"], title: "Git & Github",
+            icons: ["Git.png", "Github.png"], title: "Git & Github",
             experience: "Extensive knowledge working with Git, accelerating and optimizing software development lifecycle while leveraging CI/CD workflows in Github Actions."
         }
     ], [isDarkMode])
@@ -49,7 +49,7 @@ export default function Skills({ isDarkMode }: { isDarkMode: boolean }) {
             <h2>Skills</h2>
             <div className="flex flex-wrap">
                 {skills.map((skill, key) => (
-                    <Skill skill={skill} key={key} />
+                    <Skill skill={skill} index={key} key={key} />
                 ))}
             </div>
         </section>
