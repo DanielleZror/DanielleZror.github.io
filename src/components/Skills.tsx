@@ -5,34 +5,36 @@ export default function Skills({ isDarkMode }: { isDarkMode: boolean }) {
     const skillsSet = useMemo(() => [
         {
             icons: ["Python.png"], title: "Python",
-            experience: "Proficient in Python with specialized expertise in building web applications using both Flask and FastAPI frameworks. Skilled in designing RESTful APIs, implementing authentication, and optimizing performance for scalable applications."
+            experience: "Proficient in developing backend services serving both RESTful APIs and web applications, with frameworks such as Flask and FastAPI."
         },
         {
             icons: ["React.png", "Vue.png", "Angular.png"], title: "React, Vue & Angular",
-            experience: "Proficient in frontend development frameworks including React, Vue.js, and Angular. Skilled in building dynamic and interactive web applications, utilizing the strengths of each framework to deliver efficient and user-friendly experiences."
+            experience: "Crafting dynamic and interactive web applications, utilizing the strengths of each framework to deliver efficient and user-friendly experiences."
         },
         {
             icons: ["MySQL.png", "Oracle.png", "MongoDB.png"], title: "MySQL, Oracle & MongoDB",
-            experience: "Proficient in database management systems including MySQL, Oracle, and MongoDB. Skilled in designing schemas, optimizing queries, and ensuring data integrity across different database platforms."
+            experience: "Experienced in schemas designing, queries optimization, and data integrity across different DataBase platforms."
         },
         {
             icons: [isDarkMode ? "DarkAWS.png" : "AWS.png"], title: "AWS",
-            experience: "Deploying and managing cloud infrastructure on AWS, including EC2 instances, S3 buckets, IAM roles, Route 53, and Elastic Load Balancer (ELB) setup. Experienced in leveraging AWS Lambda and API Gateway for serverless computing. "
+            experience: "Architecting distributed systems using services such as EC2, S3, IAM, Route 53, ELB, Lambdas and API Gateway. "
         },
         {
             icons: ["JS.png", "TS.png"], title: "Javascript & Typescript",
-            experience: "Proficient in both JavaScript and TypeScript, with expertise in developing scalable and maintainable frontend and backend applications, leveraging modern language features and best practices."
+            experience: "Expertise in developing scalable and maintainable Frontend and Backend applications, using modern features, best practices and frameworks."
         },
         {
             icons: ["Node.png"], title: "Node",
-            experience: "Proficient in Node.js development, with expertise in building scalable and efficient server-side applications, RESTful APIs, and real-time web services using the Node.js runtime environment."
+            experience: "Proficient in developing backend services serving both RESTful APIs and web applications, with frameworks such as Next.js and Express."
         },
-        { icons: ["Docker.png"], title: "Docker", experience: "put here your experience" },
         {
-            icons: ["Java.png"], title: "Java",
-            experience: "Developed a set of microservices, each adhering to core Java principles such as Object-Oriented Programming (OOP), design patterns, and multi-threading."
+            icons: ["Docker.png"], title: "Docker",
+            experience: "Leveraging Docker containers in all product lifecycle environments, from development, through staging and production."
         },
-        { icons: ["HTML.png", "CSS.png"], title: "HTML, CSS", experience: "put here your experience" }
+        {
+            icons: ["Github.png"], title: "Git & Github",
+            experience: "Extensive knowledge working with Git, accelerating and optimizing software development lifecycle while leveraging CI/CD workflows in Github Actions."
+        }
     ], [isDarkMode])
 
     const [skills, setSkills] = useState(skillsSet)
