@@ -7,7 +7,7 @@ export enum Mode {
 
 export default function useDarkMode(): [Mode, Dispatch<Mode>] {
     const isDarkMode = () => {
-        return localStorage.theme === Mode.Dark || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        return localStorage.theme !== Mode.Light || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) || !('theme' in localStorage)
     }
     const [theme, setTheme] = useState<Mode>(isDarkMode() ? Mode.Dark : Mode.Light)
 
