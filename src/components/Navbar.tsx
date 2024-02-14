@@ -51,7 +51,7 @@ export default function Navbar({ observerRefs, onChangeMode }: { observerRefs: {
                 <SpeedDial
                     FabProps={{ sx: { borderColor: 'white', border: '1px solid' } }}
                     sx={{ position: 'fixed', top: 32, right: 13, visibility: { xs: 'visible', sm: 'hidden' }, opacity: { xs: 1, sm: 0 }, transition: "all 0.5s ease-in-out" }}
-                    direction="down" ariaLabel="menu" icon={<img className="self-center w-10 " src="dz.png" alt="" />}>
+                    direction="down" ariaLabel="menu" icon={<img className="self-center w-9 " src="dz.png" alt="" />}>
                     {sections.map((section, key) => (
                         <SpeedDialAction
                             key={key}
@@ -63,7 +63,6 @@ export default function Navbar({ observerRefs, onChangeMode }: { observerRefs: {
                             } />
                     ))}
                     <SpeedDialAction
-                        color="primary"
                         FabProps={{ sx: { width: '70px', borderRadius: '20px', borderColor: 'white', border: '1px solid' } }}
                         icon={<DarkSwitch onChangeMode={onChangeMode} />} />
                 </SpeedDial>
