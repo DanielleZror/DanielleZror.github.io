@@ -31,7 +31,7 @@ module.exports = {
           400: "#D44283"
         },
         white: {
-          DEFAULT: 'white',
+          DEFAULT: '#FDFCFA',
           300: '#fbf9f5',
           400: '#eee9df'
         }
@@ -47,26 +47,13 @@ module.exports = {
           400: '#151515'
         },
         white: {
-          DEFAULT: 'white',
+          DEFAULT: '#FDFCFA',
           300: '#fbf9f5',
           400: '#eee9df'
         }
       },
       lineHeight: {
         '12': '3.5rem'
-      },
-      keyframes: {
-        blink: {
-          "0%": {
-            borderColor: "transparent"
-          },
-          "100%": {
-            borderColor: "white"
-          }
-        }
-      },
-      animation: {
-        blink: "blink 2s infinite linear"
       },
       gridTemplateColumns: {
         '2': '160px 1fr'

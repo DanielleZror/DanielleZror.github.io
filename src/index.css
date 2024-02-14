@@ -4,7 +4,7 @@
 
 @layer base {
   h1 {
-    @apply text-black dark:text-white text-5xl font-bold max-[840px]:text-4xl max-[695px]:text-3xl max-[625px]:text-2xl text-left dark:selection:bg-pink selection:bg-pink-200
+    @apply text-black dark:text-white text-5xl font-bold max-[840px]:text-4xl max-[695px]:text-3xl max-[625px]:text-2xl leading-12 max-[625px]:leading-7 text-left dark:selection:bg-pink selection:bg-pink-200
   }
 
   h2 {
