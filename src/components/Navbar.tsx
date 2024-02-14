@@ -84,7 +84,7 @@ export default function Navbar({ observerRefs, onChangeMode }: { observerRefs: {
                             </a>
                         ))}
                     </Box>
-                    <DarkSwitch onChangeMode={onChangeMode} />
+                    <DarkSwitch onChangeMode={onChangeMode} className="mb-9" />
                 </Drawer>
             </Box>
         </>

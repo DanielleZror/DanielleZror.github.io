@@ -2,7 +2,7 @@ import Switch from "@mui/material/Switch"
 import { useEffect, useState } from "react"
 import useDarkMode, { Mode } from "../hooks/useDarkMode"
 
-export default function DarkSwitch({ onChangeMode }: { onChangeMode: Function }) {
+export default function DarkSwitch({ onChangeMode, className }: { onChangeMode: Function, className?: string }) {
     const [theme, setTheme] = useDarkMode()
     const [checked, setChecked] = useState(theme === Mode.Dark ? true : false)
 
@@ -24,7 +24,7 @@ export default function DarkSwitch({ onChangeMode }: { onChangeMode: Function })
     }, [])
 
     return (
-        <Switch checked={checked} onChange={handleChange} className="m-auto"
+        <Switch checked={checked} onChange={handleChange} className={`m-auto ${className}`}
             sx={{
                 width: 62,
                 height: 32,
