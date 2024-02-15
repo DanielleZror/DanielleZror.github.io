@@ -16,7 +16,7 @@ export default function Skills({ isDarkMode }: { isDarkMode: boolean }) {
             experience: "Experienced in schemas designing, queries optimization, and data integrity across different DataBase platforms."
         },
         {
-            icons: [isDarkMode ? "DarkAWS.png" : "AWS.png"], title: "AWS",
+            icons: [isDarkMode ? "DarkAWS.png" : "AWS.png"], title: "Cloud",
             experience: "Architecting distributed systems using services such as EC2, S3, IAM, Route 53, ELB, Lambdas and API Gateway. "
         },
         {
@@ -32,7 +32,7 @@ export default function Skills({ isDarkMode }: { isDarkMode: boolean }) {
             experience: "Leveraging Docker containers in all product lifecycle environments, from development, through staging and production."
         },
         {
-            icons: ["Git.png", "Github.png"], title: "Git & Github",
+            icons: ["Git.png", isDarkMode ? "DarkGithub.png" : "Github.png"], title: "Git & Github",
             experience: "Extensive knowledge working with Git, accelerating and optimizing software development lifecycle while leveraging CI/CD workflows in Github Actions."
         }
     ], [isDarkMode])
