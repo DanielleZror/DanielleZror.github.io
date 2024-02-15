@@ -3,6 +3,7 @@ import ProblemSolving from "../icons/ProblemSolving"
 import CreativeDesign from "../icons/CreativeDesign"
 import ProductMindset from "../icons/ProductMindset"
 import Collaboration from "../icons/Collaboration"
+import Organized from "../icons/Organized"
 import IconDescription from "./IconDescription"
 
 export default function About() {
@@ -26,6 +27,10 @@ export default function About() {
         {
             icon: <Collaboration size={28} color="#E9A5C5" />,
             description: "I excel in teamwork, uplifting both myself and others, fostering collaboration, and enhancing overall team effectiveness."
+        },
+        {
+            icon: <Organized size={28} color="#E9A5C5" />,
+            description: "My organizational skills ensure efficient task and time management, prioritization, and timely project completion."
         }
     ]
     return (
@@ -49,7 +54,7 @@ export default function About() {
             <div className="grid grid-cols-[repeat(3,1fr)] max-md:grid-cols-[repeat(2,1fr)] pt-6 gap-4 text-center">
                 {uniqueness.map((u, key) => {
                     return (
-                        <IconDescription key={key} className="flex-col max-md:last-of-type:col-span-full"
+                        <IconDescription key={key} className="flex-col"
                             description={u.description}
                             icon={() => u.icon} />
                     )
