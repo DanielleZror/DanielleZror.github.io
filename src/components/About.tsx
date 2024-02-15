@@ -26,7 +26,7 @@ export default function About() {
         },
         {
             icon: <Collaboration size={28} color="#E9A5C5" />,
-            description: "I excel in teamwork, uplifting both myself and others, fostering collaboration, and enhancing overall team effectiveness."
+            description: "I excel in teamwork, uplifting others, fostering collaboration, and enhancing team effectiveness."
         },
         {
             icon: <Organized size={28} color="#E9A5C5" />,
@@ -51,7 +51,7 @@ export default function About() {
             <h4 className="text-pink dark:text-pink selection:bg-pink-200 dark:selection:bg-pink-200">
                 What is my uniqueness?
             </h4>
-            <div className="grid grid-cols-[repeat(3,1fr)] max-md:grid-cols-[repeat(2,1fr)] pt-6 gap-4 text-center">
+            <div className="grid grid-cols-[repeat(3,1fr)] max-md:grid-cols-[repeat(2,1fr)] pt-6 gap-4 text-center gap-y-6">
                 {uniqueness.map((u, key) => {
                     return (
                         <IconDescription key={key} className="flex-col"
