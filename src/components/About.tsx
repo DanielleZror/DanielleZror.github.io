@@ -40,7 +40,7 @@ export default function About() {
                 <img src="Profile.png" alt="Profile" />
             </div>
             <h5 className="mb-4">
-                I am a Software Engineer with more than 9 years, with a track record of delivering high-quality projects on time. My expertise lies in software development, with proficiency in languages and frameworks such as Python, JavaScript, React.js, Vue.js as well as Databases like MySQL, MongoDB, Oracle, ArangoDB, and more.
+                I am a Software Engineer with more than 7 years experience, with a track record of delivering high-quality projects on time. My expertise lies in software development, with proficiency in languages and frameworks such as Python, JavaScript, React.js, Vue.js as well as Databases like MySQL, MongoDB, Oracle, ArangoDB, and more.
             </h5>
             <h5 className="mb-4">
                 My strong problem-solving skills and attention to detail have enabled me to identify and resolve complex technical challenges efficiently throughout the years. I'm highly motivated, and technology-driven, and possess a keen aptitude for self-learning. I have led multiple software projects from conception to deployment, collaborating closely with cross-functional teams to exceed customer expectations.
