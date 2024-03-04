@@ -7,7 +7,7 @@ import SpeedDialAction from '@mui/material/SpeedDialAction'
 import DarkSwitch from "./DarkSwitch"
 
 
-export default function Navbar({ observerRefs, onChangeMode }: { observerRefs: { current: HTMLHeadingElement[] | null[] }, onChangeMode: Function }) {
+export default function Navbar({ observerRefs }: { observerRefs: { current: HTMLHeadingElement[] | null[] } }) {
     const [activeSection, setActiveSection] = useState(0)
     const drawerWidth = 112
     // const observers = useRef<{ current: IntersectionObserver[] }>({ current: [] })
@@ -64,7 +64,7 @@ export default function Navbar({ observerRefs, onChangeMode }: { observerRefs: {
                     ))}
                     <SpeedDialAction
                         FabProps={{ sx: { width: '70px', borderRadius: '20px', borderColor: 'white', border: '1px solid' } }}
-                        icon={<DarkSwitch onChangeMode={onChangeMode} />} />
+                        icon={<DarkSwitch />} />
                 </SpeedDial>
             </Box>
             <Box component="nav" sx={{ width: { sm: drawerWidth } }}>
@@ -84,7 +84,7 @@ export default function Navbar({ observerRefs, onChangeMode }: { observerRefs: {
                             </a>
                         ))}
                     </Box>
-                    <DarkSwitch onChangeMode={onChangeMode} className="mb-9" />
+                    <DarkSwitch className="mb-9" />
                 </Drawer>
             </Box>
         </>

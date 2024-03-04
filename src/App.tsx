@@ -48,17 +48,14 @@ function App() {
     { id: "home", component: Home }, { id: "about", component: About }, { id: "resume", component: Resume },
     { id: "skills", component: Skills }, { id: "contact", component: Contact }]
 
-  const [mode, setMode] = useDarkMode()
+  const [mode] = useDarkMode()
 
-  const handleModeChange = (mode: Mode) => {
-    setMode(mode)
-  }
   let theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode])
 
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Navbar observerRefs={observerRefs} onChangeMode={handleModeChange} />
+        <Navbar observerRefs={observerRefs} />
         <main className="dark:bg-black bg-white-300 ml-28 max-sm:ml-0">
           {sections.map((section, key) => {
             return (

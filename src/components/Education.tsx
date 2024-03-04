@@ -30,11 +30,11 @@ export default function Education() {
             }
         }}>
             {institutions.map((institution, key) => (
-                <CustomTimelineItem key={key} className="first:mt-4 last:mb-4">
-                    <TimelineContent sx={{ ml: "16px" }}>
-                        {institution.link ? <a href={institution.link} target="_blank" rel="noreferrer"><h4 className="hover:text-pink hover:underline">{institution.title}</h4></a> : <h4>{institution.title}</h4>}
+                <CustomTimelineItem key={key} className="last:mb-4">
+                    <TimelineContent sx={{ px: '32px', py: '30px' }}>
+                        {institution.link ? <a href={institution.link} target="_blank" rel="noreferrer"><h4 className="hover:text-pink hover:underline hover:selection:bg-pink-200 ">{institution.title}</h4></a> : <h4>{institution.title}</h4>}
                         {institution.name && <h6 className="mb-3">{institution.name}</h6>}
-                        <h6 className="mb-3">{institution.years}</h6>
+                        <h6>{institution.years}</h6>
                     </TimelineContent>
                 </CustomTimelineItem>
             ))}

@@ -1,19 +1,27 @@
-import { useState, Dispatch, useEffect } from "react"
+import { useState, useEffect } from "react"
 
 export enum Mode {
     Dark = "dark",
     Light = "light"
 }
 
-export default function useDarkMode(): [Mode, Dispatch<Mode>] {
+export default function useDarkMode(): [Mode, Function] {
     const isDarkMode = () => {
         return localStorage.theme !== Mode.Light || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) || !('theme' in localStorage)
     }
     const [theme, setTheme] = useState<Mode>(isDarkMode() ? Mode.Dark : Mode.Light)
 
-    const setLocalStorage = (mode: Mode) => {
-        localStorage.theme = mode
+    const toggleTheme = () => {
+        let mode = Mode.Dark
+        if (theme === Mode.Dark) mode = Mode.Light
         setTheme(mode)
+        setLocalStorage(mode)
+    }
+
+    const setLocalStorage = (mode: Mode) => {
+        localStorage.setItem('theme', mode)
+        window.dispatchEvent(new Event("storage"));
+
         if (mode === Mode.Dark) {
             document.documentElement.classList.add(Mode.Dark)
         } else {
@@ -22,13 +30,18 @@ export default function useDarkMode(): [Mode, Dispatch<Mode>] {
     }
 
     useEffect(() => {
-        if (isDarkMode()) {
-            setLocalStorage(Mode.Dark)
-        } else {
-            setLocalStorage(Mode.Light)
+        const mode = isDarkMode() ? Mode.Dark : Mode.Light
+        setLocalStorage(mode)
+
+        const storageChanged = () => {
+            setTheme(isDarkMode() ? Mode.Dark : Mode.Light)
         }
-    }, [theme])
+
+        window.addEventListener('storage', storageChanged)
+
+        return () => window.removeEventListener("storage", storageChanged)
+    }, [])
 
 
-    return [theme, setLocalStorage]
+    return [theme, toggleTheme]
 }

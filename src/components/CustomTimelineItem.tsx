@@ -8,7 +8,7 @@ import { ReactNode } from "react"
 export default function CustomTimelineItem({ children, className }: { children: ReactNode, className?: string }) {
 
     return (
-        <TimelineItem className={`ml-3 ${className}`}>
+        <TimelineItem className={className}>
             <TimelineSeparator>
                 <TimelineDot variant="outlined" sx={{ borderColor: "#F64293" }} />
                 <TimelineConnector />

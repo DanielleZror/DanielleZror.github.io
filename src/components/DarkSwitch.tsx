@@ -2,15 +2,13 @@ import Switch from "@mui/material/Switch"
 import { useEffect, useState } from "react"
 import useDarkMode, { Mode } from "../hooks/useDarkMode"
 
-export default function DarkSwitch({ onChangeMode, className }: { onChangeMode: Function, className?: string }) {
-    const [theme, setTheme] = useDarkMode()
+export default function DarkSwitch({ className }: { className?: string }) {
+    const [theme, toggleTheme] = useDarkMode()
     const [checked, setChecked] = useState(theme === Mode.Dark ? true : false)
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const currentMode = event.target.checked ? Mode.Dark : Mode.Light
-        setTheme(currentMode)
         setChecked(event.target.checked)
-        onChangeMode(currentMode)
+        toggleTheme()
     }
 
     useEffect(() => {
