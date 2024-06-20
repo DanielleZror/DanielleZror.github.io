@@ -59,8 +59,8 @@ module.exports = {
         '2': '160px 1fr'
       },
       backgroundImage: {
-        'profile-pic-dark': "linear-gradient(rgb(32 32 32 / 60%), rgb(32 32 32 / 60%)), url(/public/Profile.png)",
-        'profile-pic': "linear-gradient(rgb(251 249 245 / 60%), rgb(251 249 245 / 60%)), url(/public/Profile.png)"
+        'profile-pic-dark': "linear-gradient(rgb(32 32 32 / 60%), rgb(32 32 32 / 40%)), url(/public/Profile.png)",
+        'profile-pic': "linear-gradient(rgb(251 249 245 / 20%), rgb(251 249 245 / 30%)), url(/public/Profile.png)"
       },
       backgroundPosition: {
         'right-bottom': 'right -3rem bottom -3rem'

@@ -37,7 +37,7 @@ export default function About() {
         <section className="dark:bg-black-400 bg-white-400">
             <h2 className="max-md:mb-8">About Me</h2>
             <div className="flex justify-center transition-height duration-500 ease-in-out md:h-0 max-md:h-64 max-md:mb-8">
-                <img src="Profile.png" alt="Profile" />
+                <img src="Profile.png" alt="Profile" className="border rounded-full border-white" />
             </div>
             <h5 className="mb-4">
                 I am a Software Engineer with more than 7 years of experience, with a track record of delivering high-quality projects on time. My expertise lies in software development, with proficiency in languages and frameworks such as Python, JavaScript, React.js, Vue.js as well as Databases like MySQL, MongoDB, Oracle, ArangoDB, and more.
